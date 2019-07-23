@@ -1,7 +1,8 @@
-
+#!/usr/bin/env python
 # coding: utf-8
 
 # In[1]:
+
 
 get_ipython().magic(u'matplotlib inline')
 import os
@@ -18,6 +19,7 @@ from hr_db_scripts.main_db_script import get_table_for_variable_code, get_db_tab
 
 # In[2]:
 
+
 def round_down_near_24(datetimes): # round down the times near midnight so the tide levels stay on the correct day
     close_time_idx = datetimes.indexer_between_time('23:29', '23:59')
     adjusted_times = datetimes[close_time_idx] - pd.Timedelta(minutes=15)
@@ -28,6 +30,7 @@ def round_down_near_24(datetimes): # round down the times near midnight so the t
 
 
 # In[3]:
+
 
 def cln_n_rnd_times(df):
     for i in range(df.shape[1]):
@@ -40,11 +43,13 @@ def cln_n_rnd_times(df):
 
 # In[4]:
 
+
 def pivot_dv_df(df):
     return df.pivot(columns='SiteID', values='Value')
 
 
 # In[5]:
+
 
 def rename_cols(df, var_abbrev):
     if var_abbrev != "":
@@ -59,6 +64,7 @@ def rename_cols(df, var_abbrev):
 
 # In[6]:
 
+
 def filter_max_rain_time_dfs(rain_daily_df, time_df):
     timemx_filt = pd.DataFrame(np.where(rain_daily_df>0, time_df, np.datetime64('NaT')))
     timemx_filt.columns = time_df.columns
@@ -67,6 +73,7 @@ def filter_max_rain_time_dfs(rain_daily_df, time_df):
 
 
 # In[7]:
+
 
 def tide_when_rain_max(rn_mx_time_df):
     td_df = get_table_for_variable_code('six_min_tide')
@@ -93,6 +100,7 @@ def tide_when_rain_max(rn_mx_time_df):
 
 # In[8]:
 
+
 def remove_duplicates(df):
     siteids = df['SiteID'].unique()
     df.reset_index(inplace=True)
@@ -112,6 +120,7 @@ def remove_duplicates(df):
 
 # In[9]:
 
+
 def daily_pivot_table(var_code, agg_function, abbreviation):    
     df = get_table_for_variable_code(var_code)
     try:
@@ -127,12 +136,14 @@ def daily_pivot_table(var_code, agg_function, abbreviation):
 
 # In[10]:
 
-sites = get_db_table_as_df('sites')
+
+#sites = get_db_table_as_df('sites')
 
 
 # #  Rainfall
 
 # In[11]:
+
 
 # get rainfall data at 15 min interval
 rain_df = get_table_for_variable_code('rainfall')
@@ -141,6 +152,7 @@ rain_df = get_table_for_variable_code('rainfall')
 # ## Daily Rainfall
 
 # In[12]:
+
 
 rain_daily15 = daily_pivot_table('rainfall', np.sum, '')
 rain_daily = daily_pivot_table('daily_rainfall', np.sum, '')
@@ -153,6 +165,7 @@ rain_daily_comb_named.head()
 
 # In[13]:
 
+
 rain15 = pivot_dv_df(rain_df)
 rain_hourly_totals = rain15.rolling(window='H').sum()
 rhr_mx = rain_hourly_totals.resample('D').max()
@@ -161,6 +174,7 @@ rhr_mx.head()
 
 
 # In[14]:
+
 
 rhr_timemx = rain_hourly_totals.groupby(pd.TimeGrouper('D')).idxmax()
 rhr_timemx = rename_cols(rhr_timemx, 'rhr_mxtime')
@@ -172,12 +186,14 @@ rhr_timemx.head()
 
 # In[15]:
 
+
 r15_mx = rain15.resample('D').max()
 r15_mx = rename_cols(r15_mx, 'r15mx')
 r15_mx.head()
 
 
 # In[16]:
+
 
 r15_timemx = rain15.groupby(pd.TimeGrouper('D')).idxmax()
 r15_timemx = rename_cols(r15_timemx, 'r15_mxtime')
@@ -189,6 +205,7 @@ r15_timemx.head()
 
 # In[17]:
 
+
 rain_prev_3_days = rain_daily_comb_no_name.shift(1).rolling(window=3).sum()
 rain_prev_3_days = rename_cols(rain_prev_3_days, 'r3d')
 rain_prev_3_days.head()
@@ -196,15 +213,18 @@ rain_prev_3_days.head()
 
 # In[18]:
 
+
 rain_daily_comb_named['rd-14'][rain_daily_comb_named['rd-14']<0]
 
 
 # In[19]:
 
+
 rain15.loc['2014-06-24']
 
 
 # In[20]:
+
 
 rain_prev_3_days.plot.box()
 
@@ -212,6 +232,7 @@ rain_prev_3_days.plot.box()
 # #  Groundwater
 
 # In[21]:
+
 
 gw_df = daily_pivot_table('shallow_well_depth', np.mean, 'gw_av')
 gw_df.head()
@@ -223,6 +244,7 @@ gw_df.head()
 
 # In[22]:
 
+
 tide_df = daily_pivot_table('six_min_tide', np.mean, 'td_av')
 tide_df.head()
 
@@ -231,11 +253,13 @@ tide_df.head()
 
 # In[23]:
 
+
 td_r15mx = tide_when_rain_max(r15_timemx)
 td_r15mx.head()
 
 
 # In[24]:
+
 
 td_rhrmx = tide_when_rain_max(rhr_timemx)
 td_rhrmx.head()
@@ -245,12 +269,14 @@ td_rhrmx.head()
 
 # In[25]:
 
+
 hilos = []
 for v in ['high_tide', 'high_high_tide', 'low_tide', 'low_low_tide']:
     hilos.append(daily_pivot_table(v, np.mean, "".join(w[0] for w in v.split('_'))))
 
 
 # In[26]:
+
 
 hilo_df = pd.concat(hilos, axis=1)
 hilo_df.head()
@@ -259,6 +285,7 @@ hilo_df.head()
 # #  Wind
 
 # In[27]:
+
 
 wind_dfs = []
 for v in ['WDF2', 'WSF2', 'AWDR', 'AWND', 'WGF6', 'WSF6', 'WDF6', 'WS2min', 'WD2min']:
@@ -279,6 +306,7 @@ all_wind.head()
 
 # In[28]:
 
+
 feature_df = pd.concat([all_wind, hilo_df, td_r15mx, td_rhrmx, tide_df, gw_df, r15_mx, rhr_mx, rain_daily_comb_named, rain_prev_3_days], axis=1)
 feature_df = feature_df.loc['2010-09-15':'2016-10-15']
 feature_df.head()
@@ -289,12 +317,14 @@ feature_df.head()
 
 # In[29]:
 
+
 con = sqlite3.connect(db_filename)
 feature_df.to_sql(con=con, name="nor_daily_observations", if_exists="replace")
 feature_df.to_csv('nor_daily_observations.csv')
 
 
 # In[ ]:
+
 
 
 
