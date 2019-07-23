@@ -8,21 +8,21 @@
 
 # In[1]:
 
-get_ipython().magic(u'matplotlib inline')
+#get_ipython().magic(u'matplotlib inline')
 import os
 import sys
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-from focus_intersection import subset_floods, flood_df, subset_locations
+#from focus_intersection import subset_floods, flood_df, subset_locations
 from main_db_script import data_dir, db_filename
-from hr_db_scripts.main_db_script import get_table_for_variable_code, get_db_table_as_df
+#from hr_db_scripts.main_db_script import get_table_for_variable_code, get_db_table_as_df
 import pandas as pd
 import numpy as np
 import re
 import sqlite3
 import math
-con = sqlite3.connect(db_filename)
+#con = sqlite3.connect(db_filename)
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
@@ -99,7 +99,7 @@ irene[irene['location'].duplicated(keep=False)]
 
 # In[11]:
 
-jqn = flood_df[flood_df['event'].str.contains('Joaquin')]
+jqn = flood_events[flood_events['event_name'].str.contains('Joaquin')]
 
 
 # In[12]:
@@ -120,7 +120,7 @@ del event_df['num_locations']
 
 # In[14]:
 
-flood_df[flood_df['event'].str.contains('2/25/2016')]
+flood_events[flood_events['event_name'].str.contains('2/25/2016')]
 
 
 # So to look at this more closely, I will calculate the difference in days between the "event" column date and the dates in the "\_date" column.
@@ -178,7 +178,7 @@ event_df
 
 # In[20]:
 
-feature_df = get_db_table_as_df('nor_daily_observations', dbfilename=db_filename)
+#feature_df = get_db_table_as_df('nor_daily_observations', dbfilename=db_filename)
 feature_df = pd.read_csv('nor_daily_observations.csv')
 feature_df['Datetime'] = pd.to_datetime(feature_df['Datetime'])
 feature_df.set_index('Datetime', inplace = True)
@@ -269,8 +269,8 @@ event_df_for_storage.head()
 
 # In[26]:
 
-event_df_for_storage.to_csv('{}event_data.csv'.format(data_dir), index=False)
-event_df_for_storage.to_sql(name='event_data', con=con, if_exists='replace', index=False)
+event_df_for_storage.to_csv('../event_data.csv', index=False)
+#event_df_for_storage.to_sql(name='event_data', con=con, if_exists='replace', index=False)
 
 
 # ### Combining with the non-flooding event data
@@ -315,7 +315,7 @@ reformat.head()
 
 # In[31]:
 
-reformat.to_sql(name="for_model", con=con, index=False, if_exists='replace')
+#reformat.to_sql(name="for_model", con=con, index=False, if_exists='replace')
 
 
 # ## Make average table
@@ -363,7 +363,7 @@ avdf['WGF6'] = np.where(avdf['WGF6'].isnull(), avdf['AWND'], avdf['WGF6'])
 
 # In[37]:
 
-avdf.to_sql(name='for_model_avgs', con=con, index=False, if_exists='replace')
+#avdf.to_sql(name='for_model_avgs', con=con, index=False, if_exists='replace')
 avdf.to_csv('for_model_avgs.csv')
 
 
