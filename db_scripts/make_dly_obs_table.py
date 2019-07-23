@@ -4,7 +4,7 @@
 # In[1]:
 
 
-get_ipython().magic(u'matplotlib inline')
+#get_ipython().magic(u'matplotlib inline')
 import os
 import sys
 module_path = os.path.abspath(os.path.join('..'))
@@ -226,7 +226,7 @@ rain15.loc['2014-06-24']
 # In[20]:
 
 
-rain_prev_3_days.plot.box()
+#rain_prev_3_days.plot.box()
 
 
 # #  Groundwater
@@ -318,7 +318,7 @@ feature_df.head()
 # In[29]:
 
 
-con = sqlite3.connect(db_filename)
+con = sqlite3.connect('/home/grads/w/wilsonnater/cyberProject/hampt_rd_data.sqlite')
 feature_df.to_sql(con=con, name="nor_daily_observations", if_exists="replace")
 feature_df.to_csv('nor_daily_observations.csv')
 
