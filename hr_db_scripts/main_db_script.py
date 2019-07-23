@@ -36,7 +36,7 @@ def append_non_duplicates(table, df, check_col, site_id=None, var_id=None):
     'VariableCode' and 'VariableType' if checking a variable
     :return: pandas df. a dataframe with the non duplicated values
     """
-    con = sqlite3.connect('Users/ekontou⁩/Downloads⁩/group6-master⁩/Database⁩/data⁩/contents/hampt_rd_data.sqlite')
+    con = sqlite3.connect(hr_db_filename)
     if table =='datavalues' and site_id and var_id:
         sql = "SELECT * FROM datavalues WHERE SiteID = {} AND VariableID = {}".format(site_id,
                                                                                       var_id)
@@ -66,7 +66,7 @@ def append_non_duplicates(table, df, check_col, site_id=None, var_id=None):
 
 
 def get_db_table_as_df(name, sql="""SELECT * FROM {};""", date_col=None, dbfilename=hr_db_filename):
-    con = sqlite3.connect('Users/ekontou⁩/Downloads⁩/group6-master⁩/⁨Database⁩/data⁩/contents/hampt_rd_data.sqlite')
+    con = sqlite3.connect(hr_db_filename)
     sql = sql.format(name)
     if name == 'datavalues':
         date_col = 'Datetime'
