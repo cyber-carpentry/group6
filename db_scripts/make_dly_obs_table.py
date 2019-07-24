@@ -318,7 +318,7 @@ feature_df.head()
 # In[29]:
 
 
-con = sqlite3.connect('~/hampt_rd_data.sqlite')
+con = sqlite3.connect('../../hampt_rd_data.sqlite')
 feature_df.to_sql(con=con, name="nor_daily_observations", if_exists="replace")
 feature_df.to_csv('nor_daily_observations.csv')
 

@@ -4,7 +4,7 @@ import bs4
 import sqlite3
 import pandas as pd
 
-hr_db_filename = '~/hampt_rd_data.sqlite'
+hr_db_filename = '../../hampt_rd_data.sqlite'
 
 
 def get_id(typ, data):
