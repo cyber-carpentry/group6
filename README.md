@@ -13,15 +13,21 @@ There are 3 methods that can be followed to reproduce the papers results:
 ### Method 1: Snakemake with Docker Images
 0. This method requires Docker(https://www.docker.com/) and Singularity (https://sylabs.io/docs/) to be installed on your machine
 1. SNAKEMAKE STUFF DOCKER? REQUIRED? ALSO snakefile need to have better file pointers
-2. Run snakemake in the github directory in the main directory (PATH TO GITHUB REPOSITORY/group6/)
-  * There will be a snakefile in this directory
-  * The command is "snakemake" in the command line
+2. Run snakemake using "snakemake" in the command line
+  * This command should be run in the main github directory (PATH TO GITHUB REPOSITORY/group6/)
+  * There will be a file called snakefile in this directory
 3. Completed, file should appear in SAY WHERE FILES APPEAR
 
 ### Method 2: Build Docker Image
 0. This method requires Docker(https://www.docker.com/) to be installed on your machine
 1. build docker image "docker build -t flood_pred ."
-2. 
+* This command should be run in the main github directory (PATH TO GITHUB REPOSITORY/group6/)
+* There will be a file called dockerfile in this directory
+2. Run the docker image using "docker run -v PATH TO GITHUB REPOSITORY/group6:/group6 flood_pred"
+3. Completed, files should appear in SAY WHERE FILES APPEAR
+
+### Method 3: Creating and Running Manually
+
   * Run snakemake easy or hard  
   * Build your own docker and run it combined (images and run them)
   * Commands follow those (inputs and outputs) complete process
