@@ -12,9 +12,10 @@ There are 3 methods that can be followed to reproduce the papers results:
 * All 3 methods will need that you can clone this github to your local machine. (git clone https://github.com/cyber-carpentry/group6.git)
 ### Method 1: Snakemake with Docker Images
 0. This method requires Docker(https://www.docker.com/) and Singularity (https://sylabs.io/docs/)
-1. SNAKEMAKE STUFF DOCKER? REQUIRED
+1. SNAKEMAKE STUFF DOCKER? REQUIRED? ALSO snakefile need to have better file pointers
 2. Run snakemake in the github directory in the main directory (PATH TO GITHUB REPOSITORY/group6/)
   * There will be a snakefile in this directory
+  * The command line command is simply snakemake
 3. Completed, file should appear in SAY WHERE FILES APPEAR
 
 ### Method 2: Build Docker Images
