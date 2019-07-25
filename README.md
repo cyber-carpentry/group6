@@ -13,6 +13,11 @@ There are 3 methods that can be followed to reproduce the papers results:
 ### Method 1: Snakemake with Docker Images
 0. This method requires Docker(https://www.docker.com/) and Singularity (https://sylabs.io/docs/)
 1. SNAKEMAKE STUFF DOCKER? REQUIRED
+2. Run snakemake in the github directory in the main directory (PATH TO GITHUB REPOSITORY/group6/)
+  * There will be a snakefile in this directory
+3. Completed, file should appear in SAY WHERE FILES APPEAR
+
+### Method 2: Build Docker Images
   * Run snakemake easy or hard  
   * Build your own docker and run it combined (images and run them)
   * Commands follow those (inputs and outputs) complete process
