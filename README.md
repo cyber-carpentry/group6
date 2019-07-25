@@ -8,6 +8,12 @@ The following changes & additions were made:
 * Snakefiles used to automate the workflow process.
 * Binder for interactively testing scripts.
 
+* Step 0: Base that you need, docker, snakemake, singularity, and clone github 
+* Step 1: Reproducibility sorted based on ease of execution 
+  * Run snakemake easy or hard  
+  * Build your own docker and run it combined (images and run them)
+  * Commands follow those (inputs and outputs) complete process
+
 The team members that led this effort were participants of the Cyber Carpentry 2019 workshop at the University of North Carolina at Chapel Hill.
 Note: You can access the original repository here: https://github.com/uva-hydroinformatics/flood_data.
 
