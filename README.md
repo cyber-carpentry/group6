@@ -27,7 +27,8 @@ There are 3 methods that can be followed to reproduce the papers results:
 3. Completed, files should appear in SAY WHERE FILES APPEAR
 
 ### Method 3: Creating and Running Manually
-
+0. This method requires creating both the python and R enviroment for running the scripts.
+* Python 2.7.16 was used and the required python modules with there verisons can be seen in requirements.txt
   * Run snakemake easy or hard  
   * Build your own docker and run it combined (images and run them)
   * Commands follow those (inputs and outputs) complete process
