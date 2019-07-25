@@ -4,7 +4,7 @@ This repo serves as a use case of setting up and running a research reproducibil
 
 The following changes & additions were made:
 * Re-run and slightly modified python, Jupyter Notebook, and R codes locally (local machines) to define dependencies, check packages, and fix broken links to data (minor changes can be tracked by checking our commits).
-* Addition of docker containers for 3 processes (2 parallel for data analytics and a subsequent serial one for modeling)
+* Addition of docker containers for 3 processes (2 parallel for data analytics and a subsequent serial one for modeling).
 * Snakefiles used to automate the workflow process.
 * Binder for interactively testing scripts.
 
