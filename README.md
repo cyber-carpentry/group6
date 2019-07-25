@@ -10,14 +10,14 @@ The following changes & additions were made:
 
 There are 3 methods that can be followed to reproduce the papers results:
 * All 3 methods will need that you can clone this github to your local machine. (git clone https://github.com/cyber-carpentry/group6.git)
-* These methods will refer to PATH TO GITHUB REPOSITORY which is the path on your local machine to the github repository
+* These methods will refer to PATH TO GITHUB REPOSITORY which is the path from you home directory to the github repository on your local machine.
 ### Method 1: Snakemake with Docker Images
 0. This method requires Docker(https://www.docker.com/) and Singularity (https://sylabs.io/docs/) to be installed on your machine
 1. SNAKEMAKE STUFF DOCKER? REQUIRED? ALSO snakefile need to have better file pointers
 2. Run snakemake using "snakemake" in the command line
   * This command should be run in the main github directory (PATH TO GITHUB REPOSITORY)
   * There will be a file called snakefile in this directory
-3. Completed, file should appear in SAY WHERE FILES APPEAR
+3. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in db_scripts
 
 ### Method 2: Build Docker Image
 0. This method requires Docker(https://www.docker.com/) to be installed on your machine
@@ -25,7 +25,7 @@ There are 3 methods that can be followed to reproduce the papers results:
 * This command should be run in the main github directory (PATH TO GITHUB REPOSITORY)
 * There will be a file called dockerfile in this directory
 2. Run the docker image using "docker run -v PATH TO GITHUB REPOSITORY/group6:/group6 flood_pred"
-3. Completed, files should appear in SAY WHERE FILES APPEAR
+3. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in db_scripts
 
 ### Method 3: Creating and Running Manually
 0. This method requires creating both the python and R enviroment for running the scripts.
