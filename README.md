@@ -8,8 +8,8 @@ The following changes & additions were made:
 * Snakefiles used to automate the workflow process.
 * Binder for interactively testing scripts.
 
-Steps that need to be followed for reproducibility purposes:
-* Step 0: Base that you need, docker, snakemake, singularity, and clone github 
+There are 3 methods that can be followed to reproduce the papers results:
+* All 3 methods will need that you can clone this github to your local machine. 
 * Step 1: Reproducibility sorted based on ease of execution 
   * Run snakemake easy or hard  
   * Build your own docker and run it combined (images and run them)
