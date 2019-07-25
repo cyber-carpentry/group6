@@ -9,8 +9,8 @@ The following changes & additions were made:
 * Binder for interactively testing scripts.
 
 There are 3 methods that can be followed to reproduce the papers results:
-* All 3 methods will need that you can clone this github to your local machine. 
-* Step 1: Reproducibility sorted based on ease of execution 
+* All 3 methods will need that you can clone this github to your local machine. (git clone https://github.com/cyber-carpentry/group6.git)
+## Method 1: Snakemake with Docker Images
   * Run snakemake easy or hard  
   * Build your own docker and run it combined (images and run them)
   * Commands follow those (inputs and outputs) complete process
