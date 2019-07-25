@@ -10,7 +10,9 @@ The following changes & additions were made:
 
 There are 3 methods that can be followed to reproduce the papers results:
 * All 3 methods will need that you can clone this github to your local machine. (git clone https://github.com/cyber-carpentry/group6.git)
-## Method 1: Snakemake with Docker Images
+### Method 1: Snakemake with Docker Images
+0. This method requires Docker(https://www.docker.com/) and Singularity (https://sylabs.io/docs/)
+1. SNAKEMAKE STUFF DOCKER? REQUIRED
   * Run snakemake easy or hard  
   * Build your own docker and run it combined (images and run them)
   * Commands follow those (inputs and outputs) complete process
