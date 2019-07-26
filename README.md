@@ -33,23 +33,22 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 0. This method requires creating both the python and R enviroment for running the scripts.
 * Python 2.7.16 was used and the required python modules with there verisons can be seen in requirements.txt
 * R information
-0.1. change to repository directory "cd PATH TO REPOSITORY"
-0.2. Change to parent directory of repository directory "cd .."
-1. Get file from hydroshare 
+1. Change to parent directory of repository directory "cd PATH TO REPOSITORY/.."
+2. Get file from hydroshare 
 ```wget https://www.hydroshare.org/resource/9e1b23607ac240588ba50d6b5b9a49b5/data/contents/hampt_rd_data.sqlite```
 * This will download a file in the current directory (Outside respository directory)
-2. Go to database scripts directory cd group6/db_scripts
-3. Run python script to process street floods data 
+3. Go to database scripts directory cd group6/db_scripts
+4. Run python script to process street floods data 
 ```python prepare_flood_events_table.py```
 * This will create flood_events.csv
-4. Run python scirpt to process enviromental data 
+5. Run python scirpt to process enviromental data 
 ```python make_dly_obs_table.py```
 * This will create nor_daily_observations.csv
-5. Run python script for combining flood and enviromental data 
+6. Run python script for combining flood and enviromental data 
 ```python by_event_for_model.py```
 * This requires flood_events.csv and nor_daily_observations.csv and creates for_model_avgs.csv
-6. Change to the model directory "cd ../models"
-7. Run R scripts for analysis "Rscript final_model_output_script.R"
+7. Change to the model directory "cd ../models"
+8. Run R scripts for analysis "Rscript final_model_output_script.R"
 
 
 The team members that led this effort were participants of the Cyber Carpentry 2019 workshop at the University of North Carolina at Chapel Hill.
