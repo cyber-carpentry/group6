@@ -1,4 +1,4 @@
-# Hydro-analytics Paper Reproducability Project
+# Hydro-analytics Paper Reproducibility Project
 This is a clone of the repo that hosts the code of a hydrology-related research paper, published by Sadler et al. 2018 https://doi.org/10.1016/j.jhydrol.2018.01.044. This repo serves as a use case of setting up and running a research reproducibility workflow. 
 
 The following changes & additions were made:
