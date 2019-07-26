@@ -15,10 +15,9 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 
 ### Method 1: Automated Docker Images
 0. This method requires Docker(https://www.docker.com/) to be installed on your machine
-2. Run snakemake using "snakemake" in the command line
+1. Run all the dockers using ". ./all sh" in the command line
   * This command should be run in the main github directory (PATH TO GITHUB REPOSITORY)
-  * There will be a file called snakefile in this directory
-3. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in db_scripts
+2. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in db_scripts
 
 ### Method 2: Build Docker Image
 0. This method requires Docker(https://www.docker.com/) to be installed on your machine
