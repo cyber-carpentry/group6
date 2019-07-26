@@ -7,7 +7,7 @@ The following changes & additions were made:
 * Automated the entire workflow process using dockers.
 
 ## Reproducibility Instructions
-Starting a [Jetstream](https://jetstream-cloud.org) instance is recommended: after logging in, select Ubuntu 18.04 Devel and Docker instance and launch. When your instance is activated, you can use the web shell or ```$ ssh <VM's IP address>```to .
+Starting a [Jetstream](https://jetstream-cloud.org) instance is recommended: after logging in, select Ubuntu 18.04 Devel and Docker instance and launch. When your instance is activated, you can use the web shell or ```$ ssh <VM's IP address>```. You can skip step 0 of Method 1 and 2 if you chose to do this.
 
 There are 3 methods that can be followed to reproduce the Sadler et al. 2018 paper's results:
 * All 3 methods will need that you can clone this github to your local machine. \
