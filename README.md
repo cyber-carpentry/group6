@@ -4,7 +4,7 @@ This is a clone of the repo that hosts the code of a hydrology-related research 
 The following changes & additions were made:
 * We re-run and slightly modified python, Jupyter Notebook, and R codes locally (local machines) to define dependencies, check packages, and fix broken links to data (minor changes can be tracked by checking our commits).
 * Addition of docker containers for 3 processes (2 parallel for data analytics and a subsequent serial one for modeling).
-* Snakefiles used to automate the workflow process.
+* Automated the entire workflow process using dockers.
 
 ## Reproducibility Instructions
 There are 3 methods that can be followed to reproduce the Sadler et al. 2018 paper's results:
