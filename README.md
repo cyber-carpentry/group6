@@ -63,7 +63,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 ```$ Rscript final_model_output_script.R```
 9. Four files, poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv, will be generated in the /models folder.
 
-As another small but time-consuming alternative is to create CONDA environment to run the entire workflow using CONDA based fixed environment. 
+Another time-consuming alternative is to create CONDA environment to run the entire workflow using CONDA based fixed environment. 
 
 ### Instructions to create CONDA environment: 
 
