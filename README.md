@@ -48,7 +48,9 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 5. Run python script for combining flood and enviromental data 
 ```python by_event_for_model.py```
 * This requires flood_events.csv and nor_daily_observations.csv and creates for_model_avgs.csv
-6. Run R scripts for analysis "R
+6. Change to the model directory "cd ../models"
+7. Run R scripts for analysis "Rscript final_model_output_script.R"
+
 
 The team members that led this effort were participants of the Cyber Carpentry 2019 workshop at the University of North Carolina at Chapel Hill.
 Note: You can access the original repository here: https://github.com/uva-hydroinformatics/flood_data.
