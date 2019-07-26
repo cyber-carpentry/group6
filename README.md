@@ -51,7 +51,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 7. Change to the model directory \
 ```$ cd ../models```
 8. Run R scripts for analysis \
-```$ Rscript final_model_output_script.r```
+```$ Rscript final_model_output_script.R```
 
 The team members that led this effort were participants of the Cyber Carpentry 2019 workshop at the University of North Carolina at Chapel Hill.
 Note: You can access the original repository [here](https://github.com/uva-hydroinformatics/flood_data).
