@@ -6,8 +6,14 @@ The following changes & additions were made:
 * Addition of docker containers for 4 processes (2 parallel for data analytics and 2 subsequent serial ones for final model generation).
 * Automated the entire workflow process using dockers.
 
+Goals of this reproducibility exercise where the following:
+- [x] Containerize tools - determine system interdependencies
+- [x] Utilize Github and share resources
+- [x] Workflow parallelization 
+- [x] Reproducibility across platforms
+
 ## Reproducibility Instructions
-Starting a [Jetstream](https://jetstream-cloud.org) instance is recommended: after logging in, select Ubuntu 18.04 Devel and Docker instance and launch. When your instance is activated, you can use the web shell or ```$ ssh <VM's IP>```. You can skip step 0 of Method 1 and 2 if you chose to do this.
+Starting a [Jetstream](https://jetstream-cloud.org) instance is recommended: after logging in, select Ubuntu 18.04 Devel and Docker instance, m1.medium (CPU: 6, Mem: 16 GB, Disk: 60 GB) size and launch. When your instance is activated, you can use the web shell or ```$ ssh <VM's IP>``` in your command line. You can skip step 0 of Methods 1 and 2 if you choose to do this.
 
 There are 3 methods that can be followed to reproduce the Sadler et al. 2018 paper's results:
 * All 3 methods will need that you can clone this github to your local machine. \
