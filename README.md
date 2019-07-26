@@ -57,11 +57,31 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 ```$ python by_event_for_model.py```
 * This requires flood_events.csv and nor_daily_observations.csv and creates for_model_avgs.csv
 7. Change to the model directory \
-```$ cd ../models```
+```$ cd models```
 8. Run R scripts for analysis \
 ```$ Rscript final_model_output_script.R```
 9. Four files, poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv, will be generated in the /models folder.
 
+As another small but time-consuming alternative is to create CONDA environment to run the entire workflow using CONDA based fixed environment. 
+
+### Instructions to create CONDA environment: 
+
+1.	Starting a Jetstream instance is recommended: after logging in, select Ubuntu 18.04 Devel, miniconda and Docker instance, m1.medium (CPU: 6, Mem: 16 GB, Disk: 60 GB) size and launch. If miniconda is not available you can download from https://docs.conda.io/en/latest/miniconda.html
+
+2.	```$ conda create --name --file hydro_make.yml``` \\ creating a new environment\\
+3.	```$ source activate hydro```  \\ Activating the environment\\
+4.	```$ git clone https://github.com/cyber-carpentry/group6.git``` \\ cloning the git repository \\ 
+5.	```$ wget https://www.hydroshare.org/resource/9e1b23607ac240588ba50d6b5b9a49b5/data/contents/hampt_rd_data.sqlite```  \\ use this command to download the sqlite db from hydroshare into folder upstream to git repository\\
+6.	```$ cd group6/db_scripts/ ``` \\ change the folder \\
+7.	```$ python prepare_flood_events_table.py ``` \\ run the first script*\\
+8.	```$ python make_dly_obs_table.py```  \\ run the second script* \\
+9.	```$ python python by_event_for_model.py ``` \\ run the third script* \\
+10.	```$ cd  models``` \\ change the folder\\ 
+11.	```$ Rscript final_model_output_script.R``` \\ run the fourth script*\\
+
+Completed, you should see  flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in db_scripts. Additionally 4 files poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv will be generated in /models.
+
 The team members that led this effort were participants of the Cyber Carpentry 2019 workshop at the University of North Carolina at Chapel Hill.
 Note: You can access the original repository [here](https://github.com/uva-hydroinformatics/flood_data).
 
+### We welcome any suggestions and please post if you find any issues. -Thank you Group-6 team
