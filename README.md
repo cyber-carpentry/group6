@@ -40,7 +40,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 0. This method requires creating both the python and R enviroment for running the scripts.
 * Python 2.7.16 was used and the required python modules with there verisons can be seen in requirements.txt
 * R 3.5.1 was used with caret, ggfortify, ggplot2, dplyr, RSQlite, DBI, class, and randomForest packages. All packages were installed from the http<span></span>://cran.rstudio.com/ repo.
-* We recommend using conda to install requirements and instructions can be seen below
+* We recommend using conda to install the required enviroment with instructions on how to do that are below
 1. Change to parent directory of repository directory \
 ```$ cd PATH TO REPOSITORY/..```
 2. Get file from [Hydroshare](https://www.hydroshare.org/resource/9e1b23607ac240588ba50d6b5b9a49b5/data/contents/hampt_rd_data.sqlite) \
@@ -63,11 +63,11 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 ```$ Rscript final_model_output_script.R```
 9. Four files, poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv, will be generated in the /models folder.
 
-Another time-consuming alternative is to create CONDA environment to run the entire workflow using CONDA based fixed environment. 
+As another small but time-consuming alternative is to create CONDA environment to run the entire workflow using CONDA based fixed environment. 
 
 ### Instructions to create CONDA environment: 
 
-0.	Starting a Jetstream instance is recommended: after logging in, select Ubuntu 18.04 Devel, miniconda and Docker instance, m1.medium (CPU: 6, Mem: 16 GB, Disk: 60 GB) size and launch. If miniconda is not available you can download from https://docs.conda.io/en/latest/miniconda.html
+0.	Starting a Jetstream instance is recommended: after logging in, select Ubuntu 18.04 Devel and miniconda m1.medium (CPU: 6, Mem: 16 GB, Disk: 60 GB) size and launch. If miniconda is not available you can download from https://docs.conda.io/en/latest/miniconda.html
 1.	```$ git clone https://github.com/cyber-carpentry/group6.git``` \\ cloning the git repository \\ 
 2.	```$ conda create --name --file hydro_make.yml``` \\ creating a new environment\\
 3.	```$ source activate hydro```  \\ Activating the environment\\
