@@ -33,8 +33,8 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 0. This method requires creating both the python and R enviroment for running the scripts.
 * Python 2.7.16 was used and the required python modules with there verisons can be seen in requirements.txt
 * R information
-0.1: change to repository directory "cd PATH TO REPOSITORY"
-0.2 Change to parent directory of repository directory "cd .."
+0.1. change to repository directory "cd PATH TO REPOSITORY"
+0.2. Change to parent directory of repository directory "cd .."
 1. Get file from hydroshare 
 ```wget https://www.hydroshare.org/resource/9e1b23607ac240588ba50d6b5b9a49b5/data/contents/hampt_rd_data.sqlite```
 * This will download a file in the current directory (Outside respository directory)
