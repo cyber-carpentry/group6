@@ -23,7 +23,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 1. Build Docker image \
 ```$ docker build -t flood_pred . ```
 * This command should run in the main GitHub directory (PATH TO GITHUB REPOSITORY)
-* There will be a file called Dockerfile in this directory.
+* There will be a file called Dockerfile in this directory (```ls``` to check that out).
 2. Run the Docker image using \
 ```$ docker run -v PATH TO GITHUB REPOSITORY/group6:/group6 flood_pred```
 3. Completed, flood_events.csv, nor_daily_observations.csv, for_model_avgs.csv and other files should be created in the db_scripts and models folders.
@@ -52,6 +52,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 ```$ cd ../models```
 8. Run R scripts for analysis \
 ```$ Rscript final_model_output_script.R```
+9. Four files, poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv, will be generated in the /models folder.
 
 The team members that led this effort were participants of the Cyber Carpentry 2019 workshop at the University of North Carolina at Chapel Hill.
 Note: You can access the original repository [here](https://github.com/uva-hydroinformatics/flood_data).
