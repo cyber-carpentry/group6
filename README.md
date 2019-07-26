@@ -23,7 +23,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 1. Build Docker image \
 ```$ docker build -t flood_pred . ```
 * This command should run in the main GitHub directory (PATH TO GITHUB REPOSITORY)
-* There will be a file called Dockerfile in this directory (```ls``` to check that out).
+* There will be a file called Dockerfile in this directory (use command ```$ ls``` to check that out).
 2. Run the Docker image using \
 ```$ docker run -v PATH TO GITHUB REPOSITORY/group6:/group6 flood_pred```
 3. Completed, flood_events.csv, nor_daily_observations.csv, for_model_avgs.csv and other files should be created in the db_scripts and models folders.
