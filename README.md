@@ -66,18 +66,12 @@ As another small but time-consuming alternative is to create CONDA environment t
 
 ### Instructions to create CONDA environment: 
 
-1.	Starting a Jetstream instance is recommended: after logging in, select Ubuntu 18.04 Devel, miniconda and Docker instance, m1.medium (CPU: 6, Mem: 16 GB, Disk: 60 GB) size and launch. If miniconda is not available you can download from https://docs.conda.io/en/latest/miniconda.html
-
+0.	Starting a Jetstream instance is recommended: after logging in, select Ubuntu 18.04 Devel, miniconda and Docker instance, m1.medium (CPU: 6, Mem: 16 GB, Disk: 60 GB) size and launch. If miniconda is not available you can download from https://docs.conda.io/en/latest/miniconda.html
+1.	```$ git clone https://github.com/cyber-carpentry/group6.git``` \\ cloning the git repository \\ 
 2.	```$ conda create --name --file hydro_make.yml``` \\ creating a new environment\\
 3.	```$ source activate hydro```  \\ Activating the environment\\
-4.	```$ git clone https://github.com/cyber-carpentry/group6.git``` \\ cloning the git repository \\ 
-5.	```$ wget https://www.hydroshare.org/resource/9e1b23607ac240588ba50d6b5b9a49b5/data/contents/hampt_rd_data.sqlite```  \\ use this command to download the sqlite db from hydroshare into folder upstream to git repository\\
-6.	```$ cd group6/db_scripts/ ``` \\ change the folder \\
-7.	```$ python prepare_flood_events_table.py ``` \\ run the first script*\\
-8.	```$ python make_dly_obs_table.py```  \\ run the second script* \\
-9.	```$ python python by_event_for_model.py ``` \\ run the third script* \\
-10.	```$ cd  models``` \\ change the folder\\ 
-11.	```$ Rscript final_model_output_script.R``` \\ run the fourth script*\\
+4. This enviroment can be used to run method 3
+
 
 Completed, you should see  flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in db_scripts. Additionally 4 files poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv will be generated in /models.
 
