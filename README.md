@@ -1,13 +1,13 @@
-# Group6
-This is a clone of the repo that hosts the code of a hydrology-related research paper published by Sadler et al. 2018 https://doi.org/10.1016/j.jhydrol.2018.01.044.
-This repo serves as a use case of setting up and running a research reproducibility workflow. 
+# Hydro-analytics Paper Reproducability Project
+This is a clone of the repo that hosts the code of a hydrology-related research paper, published by Sadler et al. 2018 https://doi.org/10.1016/j.jhydrol.2018.01.044. This repo serves as a use case of setting up and running a research reproducibility workflow. 
 
 The following changes & additions were made:
-* Re-run and slightly modified python, Jupyter Notebook, and R codes locally (local machines) to define dependencies, check packages, and fix broken links to data (minor changes can be tracked by checking our commits).
+* We re-run and slightly modified python, Jupyter Notebook, and R codes locally (local machines) to define dependencies, check packages, and fix broken links to data (minor changes can be tracked by checking our commits).
 * Addition of docker containers for 3 processes (2 parallel for data analytics and a subsequent serial one for modeling).
 * Snakefiles used to automate the workflow process.
 * Binder for interactively testing scripts.
 
+## Reproducibility Instructions
 There are 3 methods that can be followed to reproduce the papers results:
 * All 3 methods will need that you can clone this github to your local machine. (git clone https://github.com/cyber-carpentry/group6.git)
 * These methods will refer to PATH TO GITHUB REPOSITORY which is the path from you home directory to the github repository on your local machine. (Enter "pwd" in the command line when you are in the github repositroy to see the path)
@@ -42,10 +42,6 @@ There are 3 methods that can be followed to reproduce the papers results:
 * This will create nor_daily_observations.csv
 5. Run python script for combining flood and enviromental data "python by_event_for_model.py"
 * This requires flood_events.csv and nor_daily_observations.csv and creates for_model_avgs.csv
-6. 
-  * Run snakemake easy or hard  
-  * Build your own docker and run it combined (images and run them)
-  * Commands follow those (inputs and outputs) complete process
 
 The team members that led this effort were participants of the Cyber Carpentry 2019 workshop at the University of North Carolina at Chapel Hill.
 Note: You can access the original repository here: https://github.com/uva-hydroinformatics/flood_data.
