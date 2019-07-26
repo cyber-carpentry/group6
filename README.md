@@ -13,9 +13,8 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 ```cd group6```
 * These methods will refer to PATH TO GITHUB REPOSITORY which is the path from your home directory to the github repository on your local machine. (Enter "pwd" in the command line when you are in the github repository to see the path).
 
-### Method 1: Snakemake with Docker Images
+### Method 1: Automated Docker Images
 0. This method requires Docker(https://www.docker.com/) to be installed on your machine
-1. SNAKEMAKE STUFF DOCKER? REQUIRED? ALSO snakefile need to have better file pointers
 2. Run snakemake using "snakemake" in the command line
   * This command should be run in the main github directory (PATH TO GITHUB REPOSITORY)
   * There will be a file called snakefile in this directory
