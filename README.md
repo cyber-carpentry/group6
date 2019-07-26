@@ -2,8 +2,8 @@
 This is a clone of the repository that hosts the code of a hydrology-related research paper, published by Sadler et al. 2018 (https://doi.org/10.1016/j.jhydrol.2018.01.044). This repo serves as a use case of setting up and running a research reproducibility workflow. 
 
 The following changes & additions were made:
-* Debug and modified python, Jupyter Notebook, and R codes to determine dependencies and fix broken links to data.
-* Docker containers for 3 processes (2 parallel for data analytics and a subsequent serial one for modeling).
+* Debug and modified python, Jupyter Notebooks, and R codes to determine dependencies and fix broken links to data.
+* Addition of docker containers for 4 processes (2 parallel for data analytics and 2 subsequent serial ones for final model generation).
 * Automated the entire workflow process using dockers.
 
 ## Reproducibility Instructions
@@ -12,13 +12,13 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 ```$ git clone https://github.com/cyber-carpentry/group6.git``` 
 * These methods will refer to PATH TO GITHUB REPOSITORY which is the path from your home directory to the github repository on your local machine. Enter ```$ pwd``` in the command line when you are in the github repository to see the path.
 
-### Method 1: Automated Docker Images
+### Method 1: Automated with pre-built Docker Images
 0. This method requires [Docker](https://www.docker.com/) to be installed on your machine.
 1. Run all the Dockers using ```$ ../all.sh``` in the command line.
   * This command should be run in the main github directory (PATH TO GITHUB REPOSITORY).
-2. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in the db_scripts folder.
+2. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in the db_scripts folder.Additionally 4 files poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv will be generated in /models
 
-### Method 2: Build Docker Image
+### Method 2: Build Docker Image 
 0. This method requires [Docker](https://www.docker.com/) to be installed on your machine.
 1. Build Docker image \
 ```$ docker build -t flood_pred . ```
@@ -26,7 +26,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 * There will be a file called Dockerfile in this directory.
 2. Run the Docker image using \
 ```$ docker run -v PATH TO GITHUB REPOSITORY/group6:/group6 flood_pred```
-3. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in the db_scripts folder.
+3. Completed, flood_events.csv, nor_daily_observations.csv, for_model_avgs.csv and other files should be created in the db_scripts and models folders.
 
 ### Method 3: Running Manually
 0. This method requires creating both the python and R enviroment for running the scripts.
