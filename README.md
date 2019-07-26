@@ -32,7 +32,7 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 ### Method 3: Creating and Running Manually
 0. This method requires creating both the python and R enviroment for running the scripts.
 * Python 2.7.16 was used and the required python modules with there verisons can be seen in requirements.txt
-* R 3.5.1 was used with caret, ggfortify, ggplot2, dplyr, RSQlite, DBI, class, and randomForest packages. All packages were gotten from http://cran.rstudio.com/
+* R 3.5.1 was used with caret, ggfortify, ggplot2, dplyr, RSQlite, DBI, class, and randomForest packages. All packages were installed from the http://cran.rstudio.com/ repo.
 1. Change to parent directory of repository directory "cd PATH TO REPOSITORY/.."
 2. Get file from hydroshare 
 ```wget https://www.hydroshare.org/resource/9e1b23607ac240588ba50d6b5b9a49b5/data/contents/hampt_rd_data.sqlite```
