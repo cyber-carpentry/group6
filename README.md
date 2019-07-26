@@ -13,10 +13,10 @@ There are 3 methods that can be followed to reproduce the Sadler et al. 2018 pap
 * These methods will refer to PATH TO GITHUB REPOSITORY which is the path from your home directory to the github repository on your local machine. Enter ```$ pwd``` in the command line when you are in the github repository to see the path.
 
 ### Method 1: Automated with pre-built Docker Images
-0. This method requires [Docker](https://www.docker.com/) to be installed on your machine.
+0. This method requires [Docker](https://www.docker.com/) to be installed on your machine. The getting started guide on Docker has detailed instructions for setting up Docker on [Mac](https://docs.docker.com/docker-for-mac/install/)/[Windows](https://docs.docker.com/docker-for-windows/install/)/[Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 1. Run all the Dockers using ```$ ../all.sh``` in the command line.
   * This command should be run in the main github directory (PATH TO GITHUB REPOSITORY).
-2. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in the db_scripts folder.Additionally 4 files poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv will be generated in /models
+2. Completed, flood_events.csv, nor_daily_observations.csv, and for_model_avgs.csv should be created in the db_scripts folder. Additionally, 4 files poisson_out_test.csv, poisson_out_train.csv,  rf_out_test.csv, rf_out_train.csv will be generated in the /models folder.
 
 ### Method 2: Build Docker Image 
 0. This method requires [Docker](https://www.docker.com/) to be installed on your machine.
